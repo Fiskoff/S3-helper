@@ -1154,6 +1154,7 @@ dependencies = [
     { name = "boto3-stubs" },
     { name = "botocore" },
     { name = "moto", extra = ["server"] },
+    { name = "pydantic-settings" },
 ]
 
 [package.metadata]
@@ -1162,6 +1163,7 @@ requires-dist = [
     { name = "boto3-stubs", specifier = "~=1.44.12" },
     { name = "botocore", specifier = ">=1.44.12" },
     { name = "moto", extras = ["server"], specifier = ">=5.2.6" },
+    { name = "pydantic-settings", specifier = ">=2.16.3" },
 ]
 
 [[package]]
