@@ -13,4 +13,5 @@ dependencies = [
     "botocore>=1.44.12",
     "moto[server]>=5.2.6",
     "pydantic-settings>=2.16.3",
+    "ruff>=0.17.6",
 ]
