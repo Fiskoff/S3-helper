@@ -33,3 +33,12 @@ class StorageService:
             Params={"Bucket": self._bucket, "Key": object_key},
             ExpiresIn=expires_in,
         )
+
+    def ensure_bucket_exists(self) -> None:
+        try:
+            self._s3.head_bucket(Bucket=self._bucket)
+        except ClientError as e:
+            if e.response["Error"]["Code"] == "404":
+                self._s3.create_bucket(Bucket=self._bucket)
+            else:
+                raise
