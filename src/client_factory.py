@@ -7,17 +7,17 @@ from config import S3ClientSettings, S3ConnectionSettings
 
 
 def create_s3_client(
-    s3_connection: S3ConnectionSettings, s3_client_cfg: S3ClientSettings
+    s3_connection: S3ConnectionSettings, s3_client_config: S3ClientSettings
 ) -> Any:
 
     boto_config = Config(
-        signature_version=s3_client_cfg.signature_version,
-        s3=cast(Any, {"addressing_style": s3_client_cfg.addressing_style}),
+        signature_version=s3_client_config.signature_version,
+        s3=cast(Any, {"addressing_style": s3_client_config.addressing_style}),
         retries=cast(
             Any,
             {
-                "max_attempts": s3_client_cfg.max_attempts,
-                "mode": s3_client_cfg.retry_mode,
+                "max_attempts": s3_client_config.max_attempts,
+                "mode": s3_client_config.retry_mode,
             },
         ),
     )
